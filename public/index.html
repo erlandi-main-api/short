@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Test Shortener</title>
+  <style>
+    body{font-family:system-ui;margin:0;min-height:100vh;display:grid;place-items:center;background:#0b1020;color:#e7e9ee}
+    .card{width:min(760px,92vw);background:#121a33;border:1px solid #22305b;border-radius:16px;padding:20px}
+    input,button{padding:10px 12px;border-radius:12px;border:1px solid #2a3a70;background:#0e1530;color:#e7e9ee;width:100%}
+    .row{display:grid;gap:10px;margin:10px 0}
+    pre{white-space:pre-wrap;word-break:break-word;background:#0e1530;border:1px solid #2a3a70;border-radius:12px;padding:12px}
+    a{color:#7cc0ff}
+    small{opacity:.8}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Shortener (Testing)</h1>
+
+    <div class="row">
+      <label>URL panjang</label>
+      <input id="url" placeholder="https://example.com/..." />
+    </div>
+
+    <div class="row">
+      <label>Custom slug (opsional)</label>
+      <input id="slug" placeholder="mis: abc (kosong = auto)" />
+      <small>Slug: a-z A-Z 0-9 _ - (2–40 char)</small>
+    </div>
+
+    <div class="row">
+      <button id="btn">Buat Shortlink</button>
+    </div>
+
+    <div id="out" hidden>
+      <h2>Hasil</h2>
+      <pre id="json"></pre>
+      <p><a id="link" target="_blank" rel="noreferrer">Buka</a></p>
+    </div>
+
+    <p><small>Redirect: buka /{slug}</small></p>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
